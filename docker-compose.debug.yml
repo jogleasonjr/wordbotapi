@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  wordbotapi:
+    image: wordbotapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
